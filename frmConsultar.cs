@@ -35,7 +35,7 @@ namespace pryRodriguezSP1Clinica
                 MessageBox.Show("No se ha registrado ninguna especialidad", "Consulta", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            clsArchivo especialidad = new clsArchivo();
+            clsPropiedades especialidad = new clsPropiedades();
             especialidad.NombreArchivo = PATH_ARCHIVO_ESPECIALIDAD;
             List<clsMedico> especialidades = especialidad.ObtenerEspecialidades();
 
@@ -56,7 +56,7 @@ namespace pryRodriguezSP1Clinica
                 MessageBox.Show("No se ha registrado ninguna especialidad", "Consulta", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            clsArchivo medico = new clsArchivo();
+            clsPropiedades medico = new clsPropiedades();
             medico.NombreArchivo = PATH_ARCHIVO_MEDICO;
             List<clsMedico> medicos = medico.ObtenerMedicos();
 

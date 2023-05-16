@@ -46,8 +46,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="clsArchivo.cs" />
     <Compile Include="clsMedico.cs" />
+    <Compile Include="clsPropiedades.cs" />
     <Compile Include="frmConsultar.cs">
       <SubType>Form</SubType>
     </Compile>

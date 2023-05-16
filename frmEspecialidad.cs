@@ -35,7 +35,7 @@ namespace pryRodriguezSP1Clinica
             {
                 if (txtEspecialidadNumero.Text != "") // controla el numero de la especialidad
                 {
-                    clsArchivo especialidad = new clsArchivo();
+                    clsPropiedades especialidad = new clsPropiedades();
                     especialidad.NombreArchivo = PATH_ARCHIVO_ESPECIALIDAD;
                     // controla que no se repita la matricula
                     if (especialidad.BuscarRepetidos(txtEspecialidadNumero.Text) == false)
@@ -60,7 +60,7 @@ namespace pryRodriguezSP1Clinica
             if (ValidarDatos())
             {
                 clsMedico especialidad = EspecialidadNueva();
-                clsArchivo especialidades = new clsArchivo();
+                clsPropiedades especialidades = new clsPropiedades();
                 especialidades.NombreArchivo = PATH_ARCHIVO_ESPECIALIDAD;
                 especialidades.GrabarEspecialidad(especialidad);
                 Inicializar();

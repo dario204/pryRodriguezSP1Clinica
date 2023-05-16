@@ -28,24 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmInicio));
             this.lblEspecialidades = new System.Windows.Forms.Label();
             this.cboEspecialidad = new System.Windows.Forms.ComboBox();
             this.btnConsultar = new System.Windows.Forms.Button();
             this.dgvConsulta = new System.Windows.Forms.DataGridView();
-            this.Matricula = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnAgregarMedico = new System.Windows.Forms.Button();
             this.btnAgregarEspecialidad = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.txtNumeroEspecialidad = new System.Windows.Forms.TextBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.Matricula = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvConsulta)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblEspecialidades
             // 
             this.lblEspecialidades.AutoSize = true;
             this.lblEspecialidades.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEspecialidades.Location = new System.Drawing.Point(16, 45);
+            this.lblEspecialidades.Location = new System.Drawing.Point(6, 54);
             this.lblEspecialidades.Name = "lblEspecialidades";
             this.lblEspecialidades.Size = new System.Drawing.Size(144, 25);
             this.lblEspecialidades.TabIndex = 0;
@@ -54,7 +57,7 @@
             // cboEspecialidad
             // 
             this.cboEspecialidad.FormattingEnabled = true;
-            this.cboEspecialidad.Location = new System.Drawing.Point(184, 46);
+            this.cboEspecialidad.Location = new System.Drawing.Point(169, 54);
             this.cboEspecialidad.Name = "cboEspecialidad";
             this.cboEspecialidad.Size = new System.Drawing.Size(184, 24);
             this.cboEspecialidad.TabIndex = 1;
@@ -63,7 +66,7 @@
             // btnConsultar
             // 
             this.btnConsultar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConsultar.Location = new System.Drawing.Point(424, 38);
+            this.btnConsultar.Location = new System.Drawing.Point(380, 43);
             this.btnConsultar.Name = "btnConsultar";
             this.btnConsultar.Size = new System.Drawing.Size(102, 43);
             this.btnConsultar.TabIndex = 2;
@@ -77,12 +80,63 @@
             this.dgvConsulta.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Matricula,
             this.Nombre});
-            this.dgvConsulta.Location = new System.Drawing.Point(21, 131);
+            this.dgvConsulta.Location = new System.Drawing.Point(21, 155);
             this.dgvConsulta.Name = "dgvConsulta";
             this.dgvConsulta.RowHeadersWidth = 51;
             this.dgvConsulta.RowTemplate.Height = 24;
-            this.dgvConsulta.Size = new System.Drawing.Size(384, 284);
+            this.dgvConsulta.Size = new System.Drawing.Size(365, 284);
             this.dgvConsulta.TabIndex = 3;
+            // 
+            // btnAgregarMedico
+            // 
+            this.btnAgregarMedico.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregarMedico.Location = new System.Drawing.Point(401, 281);
+            this.btnAgregarMedico.Name = "btnAgregarMedico";
+            this.btnAgregarMedico.Size = new System.Drawing.Size(157, 56);
+            this.btnAgregarMedico.TabIndex = 4;
+            this.btnAgregarMedico.Text = "Agregar nuevo medico";
+            this.btnAgregarMedico.UseVisualStyleBackColor = true;
+            this.btnAgregarMedico.Click += new System.EventHandler(this.btnAgregarMedico_Click);
+            // 
+            // btnAgregarEspecialidad
+            // 
+            this.btnAgregarEspecialidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregarEspecialidad.Location = new System.Drawing.Point(401, 155);
+            this.btnAgregarEspecialidad.Name = "btnAgregarEspecialidad";
+            this.btnAgregarEspecialidad.Size = new System.Drawing.Size(157, 59);
+            this.btnAgregarEspecialidad.TabIndex = 5;
+            this.btnAgregarEspecialidad.Text = "Agregar nueva especialidad";
+            this.btnAgregarEspecialidad.UseVisualStyleBackColor = true;
+            this.btnAgregarEspecialidad.Click += new System.EventHandler(this.btnAgregarEspecialidad_Click);
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalir.Location = new System.Drawing.Point(414, 399);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(112, 40);
+            this.btnSalir.TabIndex = 6;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = true;
+            // 
+            // txtNumeroEspecialidad
+            // 
+            this.txtNumeroEspecialidad.Location = new System.Drawing.Point(21, 464);
+            this.txtNumeroEspecialidad.Name = "txtNumeroEspecialidad";
+            this.txtNumeroEspecialidad.Size = new System.Drawing.Size(148, 22);
+            this.txtNumeroEspecialidad.TabIndex = 7;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.lblEspecialidades);
+            this.groupBox1.Controls.Add(this.cboEspecialidad);
+            this.groupBox1.Controls.Add(this.btnConsultar);
+            this.groupBox1.Location = new System.Drawing.Point(21, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(505, 111);
+            this.groupBox1.TabIndex = 8;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "groupBox1";
             // 
             // Matricula
             // 
@@ -98,62 +152,24 @@
             this.Nombre.Name = "Nombre";
             this.Nombre.Width = 125;
             // 
-            // btnAgregarMedico
-            // 
-            this.btnAgregarMedico.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregarMedico.Location = new System.Drawing.Point(424, 253);
-            this.btnAgregarMedico.Name = "btnAgregarMedico";
-            this.btnAgregarMedico.Size = new System.Drawing.Size(157, 56);
-            this.btnAgregarMedico.TabIndex = 4;
-            this.btnAgregarMedico.Text = "Agregar nuevo medico";
-            this.btnAgregarMedico.UseVisualStyleBackColor = true;
-            this.btnAgregarMedico.Click += new System.EventHandler(this.btnAgregarMedico_Click);
-            // 
-            // btnAgregarEspecialidad
-            // 
-            this.btnAgregarEspecialidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregarEspecialidad.Location = new System.Drawing.Point(424, 131);
-            this.btnAgregarEspecialidad.Name = "btnAgregarEspecialidad";
-            this.btnAgregarEspecialidad.Size = new System.Drawing.Size(157, 59);
-            this.btnAgregarEspecialidad.TabIndex = 5;
-            this.btnAgregarEspecialidad.Text = "Agregar nueva especialidad";
-            this.btnAgregarEspecialidad.UseVisualStyleBackColor = true;
-            this.btnAgregarEspecialidad.Click += new System.EventHandler(this.btnAgregarEspecialidad_Click);
-            // 
-            // btnSalir
-            // 
-            this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalir.Location = new System.Drawing.Point(481, 375);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(112, 40);
-            this.btnSalir.TabIndex = 6;
-            this.btnSalir.Text = "Salir";
-            this.btnSalir.UseVisualStyleBackColor = true;
-            // 
-            // txtNumeroEspecialidad
-            // 
-            this.txtNumeroEspecialidad.Location = new System.Drawing.Point(21, 456);
-            this.txtNumeroEspecialidad.Name = "txtNumeroEspecialidad";
-            this.txtNumeroEspecialidad.Size = new System.Drawing.Size(118, 22);
-            this.txtNumeroEspecialidad.TabIndex = 7;
-            // 
             // frmInicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(649, 490);
+            this.ClientSize = new System.Drawing.Size(592, 520);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.txtNumeroEspecialidad);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnAgregarEspecialidad);
             this.Controls.Add(this.btnAgregarMedico);
             this.Controls.Add(this.dgvConsulta);
-            this.Controls.Add(this.btnConsultar);
-            this.Controls.Add(this.cboEspecialidad);
-            this.Controls.Add(this.lblEspecialidades);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmInicio";
             this.Text = "Consulta Especialidades y Médicos";
             this.Load += new System.EventHandler(this.frmInicio_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvConsulta)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -165,12 +181,13 @@
         private System.Windows.Forms.ComboBox cboEspecialidad;
         private System.Windows.Forms.Button btnConsultar;
         private System.Windows.Forms.DataGridView dgvConsulta;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Matricula;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.Button btnAgregarMedico;
         private System.Windows.Forms.Button btnAgregarEspecialidad;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.TextBox txtNumeroEspecialidad;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Matricula;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
     }
 }
 

@@ -33,7 +33,7 @@ namespace pryRodriguezSP1Clinica
             if (ValidarDatos())
             {
                 clsMedico mediconuevo = MedicoNuevo();
-                clsArchivo medicos = new clsArchivo();
+                clsPropiedades medicos = new clsPropiedades();
                 medicos.NombreArchivo = PATH_ARCHIVO_MEDICO;
                 medicos.GrabarMedico(mediconuevo);
                 Inicializar();
@@ -57,7 +57,7 @@ namespace pryRodriguezSP1Clinica
                 {
                     if (txtNumeroIdentificacion.Text != "") // controla el numero de identificacion
                     {
-                        clsArchivo medico = new clsArchivo();
+                        clsPropiedades medico = new clsPropiedades();
                         medico.NombreArchivo = PATH_ARCHIVO_MEDICO;
                         // controla que no se repita la matricula
                         if (medico.BuscarRepetidos(txtMatricula.Text) == false)

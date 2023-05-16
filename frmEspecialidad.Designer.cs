@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEspecialidad));
             this.lblEspecialidades = new System.Windows.Forms.Label();
             this.lblIdentificacion = new System.Windows.Forms.Label();
             this.lblEspecialidad = new System.Windows.Forms.Label();
@@ -130,6 +131,7 @@
             this.Controls.Add(this.lblEspecialidad);
             this.Controls.Add(this.lblIdentificacion);
             this.Controls.Add(this.lblEspecialidades);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmEspecialidad";
             this.Text = "Agregar nueva especialidad";
             this.Load += new System.EventHandler(this.frmEspecialidad_Load);

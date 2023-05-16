@@ -4,14 +4,12 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace pryRodriguezSP1Clinica
 {
-    public class clsArchivo
+    internal class clsPropiedades
     {
         public string NombreArchivo { get; set; }
-
         public bool GrabarMedico(clsMedico registro)
         {
             bool resultado = false;
@@ -40,12 +38,13 @@ namespace pryRodriguezSP1Clinica
             }
             return resultado;
         }
+
         public bool BuscarRepetidos(string repetido)
         {
             bool resultado = false;
             string Linea;
             string Matricula;
-            if (NombreArchivo != "" && File.Exists(NombreArchivo))
+            if (NombreArchivo != "" && File.Exists(NombreArchivo)) //verifica que el archivo existe
             {
                 StreamReader sr = new StreamReader(NombreArchivo);
                 while (sr.EndOfStream == false)
@@ -69,16 +68,16 @@ namespace pryRodriguezSP1Clinica
         {
             List<clsMedico> Lista = new List<clsMedico>();
             string Linea;
-            if (NombreArchivo!= ""&& File.Exists(NombreArchivo))
+            if (NombreArchivo != "" && File.Exists(NombreArchivo))
             {
                 StreamReader sr = new StreamReader(NombreArchivo);
-                while (sr.EndOfStream==false)
+                while (sr.EndOfStream == false)
                 {
                     Linea = sr.ReadLine();
                     clsMedico medico = new clsMedico();
                     medico.matricula = int.Parse(Linea.Split(',')[0]);
                     medico.nombre = Linea.Split(',')[1];
-                    medico.identificacion = int.Parse(Linea.Split(',')[2]);
+                   
                     Lista.Add(medico);
                 }
                 sr.Close();
@@ -86,8 +85,10 @@ namespace pryRodriguezSP1Clinica
             }
             return Lista;
         }
+
         public List<clsMedico> ObtenerEspecialidades()
         {
+
             List<clsMedico> Lista = new List<clsMedico>();
             string Linea;
             if (NombreArchivo != "" && File.Exists(NombreArchivo))

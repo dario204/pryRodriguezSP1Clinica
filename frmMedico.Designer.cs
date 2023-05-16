@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMedico));
             this.lblNuevosMedicos = new System.Windows.Forms.Label();
             this.lblMatricula = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
@@ -152,6 +153,7 @@
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.lblMatricula);
             this.Controls.Add(this.lblNuevosMedicos);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmMedico";
             this.Text = "Agregar nuego médico";
             this.Load += new System.EventHandler(this.frmMedico_Load);
