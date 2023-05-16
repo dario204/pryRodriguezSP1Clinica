@@ -18,7 +18,7 @@ namespace pryRodriguezSP1Clinica
 
         //declaro nombre archivo Especialidades
         private const string PATH_ARCHIVO_ESPECIALIDAD = "Especialidad.txt";
-        int[] NumeroEspecialidad = new int[8];
+        int[] NumeroEspecialidad = new int[5];
         public frmInicio()
         {
             InitializeComponent();
@@ -32,14 +32,14 @@ namespace pryRodriguezSP1Clinica
         {
             if (!File.Exists(Application.StartupPath + "\\" + PATH_ARCHIVO_ESPECIALIDAD))
             {
-                MessageBox.Show("No se ha registrado ninguna especialidad", "Consulta", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("No se ha registrado ninguna especialidad","" ,MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             clsPropiedades especialidad = new clsPropiedades();
             especialidad.NombreArchivo = PATH_ARCHIVO_ESPECIALIDAD;
-            List<clsMedico> especialidades = especialidad.ObtenerEspecialidades();
-
-            foreach (clsMedico especialidadess in especialidades)
+            List<clsIdentificacion> especialidades = especialidad.ObtenerEspecialidades();
+            cboEspecialidad.Items.Clear();
+            foreach (clsIdentificacion especialidadess in especialidades)
             {
                 cboEspecialidad.Items.Add(especialidadess.nombre);
                 for (int i = 0; i < especialidades.Count; i++)
@@ -58,10 +58,10 @@ namespace pryRodriguezSP1Clinica
             }
             clsPropiedades medico = new clsPropiedades();
             medico.NombreArchivo = PATH_ARCHIVO_MEDICO;
-            List<clsMedico> medicos = medico.ObtenerMedicos();
+            List<clsIdentificacion> medicos = medico.ObtenerMedicos();
 
             dgvConsulta.Rows.Clear();
-            foreach (clsMedico medicoss in medicos)
+            foreach (clsIdentificacion medicoss in medicos)
             {
                 dgvConsulta.Rows.Add(medicoss.matricula, medicoss.nombre);
             }
@@ -139,6 +139,11 @@ namespace pryRodriguezSP1Clinica
         {
             frmMedico frm = new frmMedico();
             frm.ShowDialog();
+        }
+
+        private void dgvConsulta_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
         }
     }
 }

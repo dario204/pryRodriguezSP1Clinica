@@ -32,7 +32,7 @@ namespace pryRodriguezSP1Clinica
         {
             if (ValidarDatos())
             {
-                clsMedico mediconuevo = MedicoNuevo();
+                clsIdentificacion mediconuevo = MedicoNuevo();
                 clsPropiedades medicos = new clsPropiedades();
                 medicos.NombreArchivo = PATH_ARCHIVO_MEDICO;
                 medicos.GrabarMedico(mediconuevo);
@@ -70,9 +70,9 @@ namespace pryRodriguezSP1Clinica
             }
             return resultado;
         }
-        private clsMedico MedicoNuevo()
+        private clsIdentificacion MedicoNuevo()
         {
-            clsMedico MedicoNuevo = new clsMedico();
+            clsIdentificacion MedicoNuevo = new clsIdentificacion();
             MedicoNuevo.matricula = int.Parse(txtMatricula.Text);
             MedicoNuevo.nombre= txtMatricula.Text;
             MedicoNuevo.identificacion = int.Parse(txtNumeroIdentificacion.Text);

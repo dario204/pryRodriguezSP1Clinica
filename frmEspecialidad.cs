@@ -47,9 +47,9 @@ namespace pryRodriguezSP1Clinica
             }
             return resultado;
         }
-        private clsMedico EspecialidadNueva()
+        private clsIdentificacion EspecialidadNueva()
         {
-            clsMedico especialidad = new clsMedico();
+            clsIdentificacion especialidad = new clsIdentificacion();
             especialidad.identificacion= int.Parse(txtEspecialidadNumero.Text);
             especialidad.nombre = txtEspecialidad.Text;
             return especialidad;
@@ -59,7 +59,7 @@ namespace pryRodriguezSP1Clinica
         {
             if (ValidarDatos())
             {
-                clsMedico especialidad = EspecialidadNueva();
+                clsIdentificacion especialidad = EspecialidadNueva();
                 clsPropiedades especialidades = new clsPropiedades();
                 especialidades.NombreArchivo = PATH_ARCHIVO_ESPECIALIDAD;
                 especialidades.GrabarEspecialidad(especialidad);

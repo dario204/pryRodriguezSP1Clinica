@@ -33,15 +33,15 @@
             this.cboEspecialidad = new System.Windows.Forms.ComboBox();
             this.btnConsultar = new System.Windows.Forms.Button();
             this.dgvConsulta = new System.Windows.Forms.DataGridView();
+            this.Matricula = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnAgregarMedico = new System.Windows.Forms.Button();
             this.btnAgregarEspecialidad = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.txtNumeroEspecialidad = new System.Windows.Forms.TextBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.Matricula = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mcrEspecialidades = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvConsulta)).BeginInit();
-            this.groupBox1.SuspendLayout();
+            this.mcrEspecialidades.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblEspecialidades
@@ -56,6 +56,7 @@
             // 
             // cboEspecialidad
             // 
+            this.cboEspecialidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboEspecialidad.FormattingEnabled = true;
             this.cboEspecialidad.Location = new System.Drawing.Point(169, 54);
             this.cboEspecialidad.Name = "cboEspecialidad";
@@ -82,10 +83,28 @@
             this.Nombre});
             this.dgvConsulta.Location = new System.Drawing.Point(21, 155);
             this.dgvConsulta.Name = "dgvConsulta";
+            this.dgvConsulta.ReadOnly = true;
             this.dgvConsulta.RowHeadersWidth = 51;
             this.dgvConsulta.RowTemplate.Height = 24;
             this.dgvConsulta.Size = new System.Drawing.Size(365, 284);
             this.dgvConsulta.TabIndex = 3;
+            this.dgvConsulta.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvConsulta_CellContentClick);
+            // 
+            // Matricula
+            // 
+            this.Matricula.HeaderText = "Matricula";
+            this.Matricula.MinimumWidth = 6;
+            this.Matricula.Name = "Matricula";
+            this.Matricula.ReadOnly = true;
+            this.Matricula.Width = 125;
+            // 
+            // Nombre
+            // 
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.MinimumWidth = 6;
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            this.Nombre.Width = 125;
             // 
             // btnAgregarMedico
             // 
@@ -123,41 +142,28 @@
             // 
             this.txtNumeroEspecialidad.Location = new System.Drawing.Point(21, 464);
             this.txtNumeroEspecialidad.Name = "txtNumeroEspecialidad";
+            this.txtNumeroEspecialidad.ReadOnly = true;
             this.txtNumeroEspecialidad.Size = new System.Drawing.Size(148, 22);
             this.txtNumeroEspecialidad.TabIndex = 7;
             // 
-            // groupBox1
+            // mcrEspecialidades
             // 
-            this.groupBox1.Controls.Add(this.lblEspecialidades);
-            this.groupBox1.Controls.Add(this.cboEspecialidad);
-            this.groupBox1.Controls.Add(this.btnConsultar);
-            this.groupBox1.Location = new System.Drawing.Point(21, 12);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(505, 111);
-            this.groupBox1.TabIndex = 8;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
-            // 
-            // Matricula
-            // 
-            this.Matricula.HeaderText = "Matricula";
-            this.Matricula.MinimumWidth = 6;
-            this.Matricula.Name = "Matricula";
-            this.Matricula.Width = 125;
-            // 
-            // Nombre
-            // 
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.MinimumWidth = 6;
-            this.Nombre.Name = "Nombre";
-            this.Nombre.Width = 125;
+            this.mcrEspecialidades.Controls.Add(this.lblEspecialidades);
+            this.mcrEspecialidades.Controls.Add(this.cboEspecialidad);
+            this.mcrEspecialidades.Controls.Add(this.btnConsultar);
+            this.mcrEspecialidades.Location = new System.Drawing.Point(21, 12);
+            this.mcrEspecialidades.Name = "mcrEspecialidades";
+            this.mcrEspecialidades.Size = new System.Drawing.Size(505, 111);
+            this.mcrEspecialidades.TabIndex = 8;
+            this.mcrEspecialidades.TabStop = false;
+            this.mcrEspecialidades.Text = "Buscar especialidades";
             // 
             // frmInicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(592, 520);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.mcrEspecialidades);
             this.Controls.Add(this.txtNumeroEspecialidad);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnAgregarEspecialidad);
@@ -168,8 +174,8 @@
             this.Text = "Consulta Especialidades y Médicos";
             this.Load += new System.EventHandler(this.frmInicio_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvConsulta)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.mcrEspecialidades.ResumeLayout(false);
+            this.mcrEspecialidades.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -185,7 +191,7 @@
         private System.Windows.Forms.Button btnAgregarEspecialidad;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.TextBox txtNumeroEspecialidad;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox mcrEspecialidades;
         private System.Windows.Forms.DataGridViewTextBoxColumn Matricula;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
     }
