@@ -41,24 +41,31 @@ namespace pryRodriguezSP1Clinica
 
         public bool BuscarRepetidos(string repetido)
         {
+            // devuelve falso si el código no existe en el archivo
+            // devuelve verdadero si el código ya está grabado
             bool resultado = false;
             string Linea;
             string Matricula;
             if (NombreArchivo != "" && File.Exists(NombreArchivo))
             {
+                //crea el stream en modo lectura
                 StreamReader sr = new StreamReader(NombreArchivo);
+                //lee hasta el final
                 while (sr.EndOfStream == false)
                 {
-                    Linea = sr.ReadLine();
+                    Linea = sr.ReadLine();// lee una linea completa
+                                          // el código está en el primer valor de cada línea
                     Matricula = Linea.Split(',')[0];
+                    // comparar el código buscado con el del archivo
                     if (repetido == Matricula)
                     {
+                        //si son iguales devuelve verdadero
                         resultado = true;
-                        break;
+                        break; //sale del ciclo de lectura
                     }
                 }
-                sr.Close();
-                sr.Dispose();
+                sr.Close();//cierra el stream
+                sr.Dispose();//libera los recursos
             }
             return resultado;
         }
@@ -74,15 +81,19 @@ namespace pryRodriguezSP1Clinica
                 {
                     Linea = sr.ReadLine();
                     clsIdentificacion Medico = new clsIdentificacion();
+                    // el valor decimal se formatea sin formatos regionales
+                    // para mantener el punto como separador decimal
                     Medico.matricula = int.Parse(Linea.Split(',')[0]);
                     Medico.nombre = Linea.Split(',')[1];
                     Medico.identificacion = int.Parse(Linea.Split(',')[2]);
+                    //se agrega el repuesto a la lista
                     Lista.Add(Medico);
 
                 }
                 sr.Close();
                 sr.Dispose();
             }
+            //devuelve la lista de medicos completa
             return Lista;
         }
 

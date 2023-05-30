@@ -30,12 +30,15 @@ namespace pryRodriguezSP1Clinica
         //Registar nuevo medico
         private void btnRegistrarMedico_Click(object sender, EventArgs e)
         {
-            if (ValidarDatos())
+            if (ValidarDatos()) // si los datos son correctos
             {
+                //crear un nuevo medico
                 clsIdentificacion mediconuevo = MedicoNuevo();
+                //grabar en el archivo
                 clsPropiedades medicos = new clsPropiedades();
                 medicos.NombreArchivo = PATH_ARCHIVO_MEDICO;
                 medicos.GrabarMedico(mediconuevo);
+                //restaura la interfaz al estado inicial
                 Inicializar();
                 MessageBox.Show("Registro existoso", "",MessageBoxButtons.OK);
             }
@@ -49,6 +52,7 @@ namespace pryRodriguezSP1Clinica
         {
             Inicializar();
         }
+        //Devuelve falso si no se cumplen todas las condiciones
         private bool ValidarDatos()
         {
             bool resultado = false;

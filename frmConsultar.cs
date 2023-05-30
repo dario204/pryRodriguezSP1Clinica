@@ -30,15 +30,19 @@ namespace pryRodriguezSP1Clinica
         }
         private void AgregarEspecialidad()
         {
+            // controlar si el archivo existe
             if (!File.Exists(Application.StartupPath + "\\" + PATH_ARCHIVO_ESPECIALIDAD))
             {
                 MessageBox.Show("No se ha registrado ninguna especialidad","" ,MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+            // leer el contenido del archivo
             clsPropiedades especialidad = new clsPropiedades();
             especialidad.NombreArchivo = PATH_ARCHIVO_ESPECIALIDAD;
             List<clsIdentificacion> especialidades = especialidad.ObtenerEspecialidades();
+            //limpia el combobox
             cboEspecialidad.Items.Clear();
+            //recorre la lista
             foreach (clsIdentificacion especialidadess in especialidades)
             {
                 cboEspecialidad.Items.Add(especialidadess.nombre);
