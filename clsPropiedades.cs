@@ -10,14 +10,14 @@ namespace pryRodriguezSP1Clinica
     internal class clsPropiedades
     {
         public string NombreArchivo { get; set; }
+
         public bool GrabarMedico(clsIdentificacion registro)
         {
             bool resultado = false;
-
             if (NombreArchivo != "")
             {
                 StreamWriter sw = new StreamWriter(NombreArchivo, true);
-                sw.WriteLine(registro.matricula + "," + registro.nombre + " " + registro.identificacion);
+                sw.WriteLine(registro.matricula + "," + registro.nombre + "," + registro.identificacion);
                 sw.Close();
                 sw.Dispose();
                 resultado = true;
@@ -76,7 +76,7 @@ namespace pryRodriguezSP1Clinica
                     clsIdentificacion Medico = new clsIdentificacion();
                     Medico.matricula = int.Parse(Linea.Split(',')[0]);
                     Medico.nombre = Linea.Split(',')[1];
-                    Medico.identificacion= int.Parse(Linea.Split(',')[2]);
+                    Medico.identificacion = int.Parse(Linea.Split(',')[2]);
                     Lista.Add(Medico);
 
                 }
@@ -88,24 +88,23 @@ namespace pryRodriguezSP1Clinica
 
         public List<clsIdentificacion> ObtenerEspecialidades()
         {
-
-            List<clsIdentificacion> Lista = new List<clsIdentificacion>();
-            string Linea;
+            List<clsIdentificacion> lista = new List<clsIdentificacion>();
+            string linea;
             if (NombreArchivo != "" && File.Exists(NombreArchivo))
             {
                 StreamReader sr = new StreamReader(NombreArchivo);
                 while (sr.EndOfStream == false)
                 {
-                    Linea = sr.ReadLine();
-                    clsIdentificacion especialidad = new clsIdentificacion();
-                    especialidad.identificacion = int.Parse(Linea.Split(',')[0]);
-                    especialidad.nombre = Linea.Split(',')[1];
-                    Lista.Add(especialidad);
+                    linea = sr.ReadLine();
+                    clsIdentificacion identificacion = new clsIdentificacion();
+                    identificacion.identificacion = int.Parse(linea.Split(',')[0]);
+                    identificacion.nombre = linea.Split(',')[1];
+                    lista.Add(identificacion);
                 }
                 sr.Close();
                 sr.Dispose();
             }
-            return Lista;
+            return lista;
         }
     }
 }

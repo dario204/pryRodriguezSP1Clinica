@@ -37,10 +37,11 @@ namespace pryRodriguezSP1Clinica
                 medicos.NombreArchivo = PATH_ARCHIVO_MEDICO;
                 medicos.GrabarMedico(mediconuevo);
                 Inicializar();
+                MessageBox.Show("Registro existoso", "",MessageBoxButtons.OK);
             }
             else
             {
-                MessageBox.Show("Los datos son incorrectos", "Ingrese nuevamente los datos",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                MessageBox.Show("Los datos son incorrectos", "Ingrese nuevamente los datos",MessageBoxButtons.OK,MessageBoxIcon.Warning);
             }
         }
 
@@ -74,7 +75,7 @@ namespace pryRodriguezSP1Clinica
         {
             clsIdentificacion MedicoNuevo = new clsIdentificacion();
             MedicoNuevo.matricula = int.Parse(txtMatricula.Text);
-            MedicoNuevo.nombre= txtMatricula.Text;
+            MedicoNuevo.nombre= txtNombre.Text;
             MedicoNuevo.identificacion = int.Parse(txtNumeroIdentificacion.Text);
             return MedicoNuevo;
         }
@@ -95,7 +96,7 @@ namespace pryRodriguezSP1Clinica
 
         private void txtMatricula_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if ((e.KeyChar < '0' || e.KeyChar > '9') && e.KeyChar != 8)
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
                 e.Handled = true;
             }
@@ -103,7 +104,7 @@ namespace pryRodriguezSP1Clinica
 
         private void txtNumeroIdentificacion_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if ((e.KeyChar < '0' || e.KeyChar > '9') && e.KeyChar != 8)
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
                 e.Handled = true;
             }

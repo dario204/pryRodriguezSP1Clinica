@@ -18,7 +18,7 @@ namespace pryRodriguezSP1Clinica
 
         //declaro nombre archivo Especialidades
         private const string PATH_ARCHIVO_ESPECIALIDAD = "Especialidad.txt";
-        int[] NumeroEspecialidad = new int[5];
+        int[] NumeroEspecialidad = new int[8];
         public frmInicio()
         {
             InitializeComponent();
@@ -63,7 +63,10 @@ namespace pryRodriguezSP1Clinica
             dgvConsulta.Rows.Clear();
             foreach (clsIdentificacion medicoss in medicos)
             {
-                dgvConsulta.Rows.Add(medicoss.matricula, medicoss.nombre);
+                if (medicoss.identificacion == int.Parse(lblEspecialidades.Text))
+                {
+                    dgvConsulta.Rows.Add(medicoss.matricula, medicoss.nombre);
+                }
             }
 
             cboEspecialidad.SelectedIndex = -1;

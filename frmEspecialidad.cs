@@ -64,10 +64,11 @@ namespace pryRodriguezSP1Clinica
                 especialidades.NombreArchivo = PATH_ARCHIVO_ESPECIALIDAD;
                 especialidades.GrabarEspecialidad(especialidad);
                 Inicializar();
+                MessageBox.Show("Registro exisitoso", "", MessageBoxButtons.OK);
             }
             else
             {
-                MessageBox.Show("Los datos son incorrectos", "Ingrese nuevamente los datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Los datos son incorrectos", "Ingrese nuevamente los datos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -87,7 +88,7 @@ namespace pryRodriguezSP1Clinica
         private void txtEspecialidadNumero_KeyPress(object sender, KeyPressEventArgs e)
         {
 
-            if ((e.KeyChar < '0' || e.KeyChar > '9') && e.KeyChar != 8)
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
                 e.Handled = true;
             }
